@@ -30,6 +30,7 @@ class TournamentController extends Controller
         }
         $tournament = Tournament::create([
             'name' => $request->name,
+            'organizer' => $request->organizer,
             'logo' => $logo ?? null,
         ]);
         
