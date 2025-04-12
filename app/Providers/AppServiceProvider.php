@@ -23,5 +23,11 @@ class AppServiceProvider extends ServiceProvider
         ResetPassword::createUrlUsing(function (object $notifiable, string $token) {
             return config('app.frontend_url')."/password-reset/$token?email={$notifiable->getEmailForPasswordReset()}";
         });
+
+        \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::except([
+            '/matches',
+            '/matches/*',
+            '/login',
+        ]);
     }
 }
