@@ -25,9 +25,9 @@ class AppServiceProvider extends ServiceProvider
         });
 
         \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::except([
-            '/matches',
-            '/matches/*',
-            '/login',
+            '/api/matches',
+            '/api/matches/*',
+            '/api/login',
         ]);
     }
 }
